@@ -23,24 +23,22 @@ public class Solution {
             lenB--;
             headB = headB.next;
         }
-//         while( headA != headB ){
-//             headA = headA.next;
-//             headB = headB.next;
-//         }
-//         return headA;
-//     }
-// }
-while (headA != null && headB != null) {
-            if (headA == headB) {
-                return headA; // Intersection found
-            }
-            headA = headA.next;
-            headB = headB.next;
-        }
+    //        while (headA != null && headB != null) {
+    //         if (headA == headB) {
+    //             return headA; // Intersection found
+    //         }
+    //         headA = headA.next;
+    //         headB = headB.next;
+    //     }
 
-        return null; // No intersection
+    //     return null; // No intersection
+    // }
+while(headA != headB){
+    headA = headA.next;
+    headB = headB.next;
+}
+return headA;
     }
-
     private int getListLength(ListNode head) {
         int length = 0;
         while (head != null) {
