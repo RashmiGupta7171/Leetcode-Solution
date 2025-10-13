@@ -2,5 +2,5 @@
 SELECT a.Name as Employee
 FROM Employee as a
 JOIN Employee as b
-ON a.ManagerId = b.Id
+ON a.managerid = b.id
 AND a.salary > b.salary
