@@ -5,7 +5,7 @@ class Solution {
       int left = 0;
       Map<Character , Integer> map = new HashMap();
       char[]arr = s.toCharArray();
-      for(; right < arr.length; right++){
+      for( right =0; right < arr.length; right++){
         int idx = map.getOrDefault(arr[right] , - 1);
         if(idx != -1 && idx >=left){
             res = Math.max(res , right-1-left+1);
