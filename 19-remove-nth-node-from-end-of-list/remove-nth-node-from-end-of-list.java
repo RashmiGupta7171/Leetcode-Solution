@@ -10,51 +10,33 @@
  */
 // class Solution {
 //     public ListNode removeNthFromEnd(ListNode head, int n) {
-//         ListNode slow = head , fast = head;
+//         ListNode dummy = new ListNode(0);
+//         dummy.next = head;
+//         ListNode slow = dummy , fast = dummy;
 
-//         for(int i = 1 ; i < n ; i++){
+//         for(int i = 0 ; i < n ; i++){
 //             fast = fast.next;
 //         }
 //         while(fast != null){
-//             // return head.next;
-//               slow = slow.next;
+          
+//             slow = slow.next;
 //             fast = fast.next;
 //         }
-//         // while(fast != null && fast.next != null){
-//         //     slow = slow.next;
-//         //     fast = fast.next;
-//         // }
-//         // if(slow != null && slow.next != null)
+
 //         slow.next = slow.next.next;
 
 
-//         return head;
+//         return dummy.next;
+
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        // Create a dummy node to handle edge cases (like removing head)
         ListNode dummy = new ListNode(0);
         dummy.next = head;
+        ListNode slow = dummy, fast = dummy;
 
-        ListNode slow = dummy;
-        ListNode fast = dummy;
-
-        // Move fast ahead by n+1 steps so that slow points to the node before the target
+        // Move fast n+1 steps ahead to maintain a gap of n
         for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
@@ -65,10 +47,10 @@ class Solution {
             fast = fast.next;
         }
 
-        // Remove the nth node from end
+        // Remove nth node from end
         slow.next = slow.next.next;
 
-        // Return the updated list
+        // Return new head
         return dummy.next;
     }
 }
