@@ -13,41 +13,61 @@ class Node {
 }
 */
 
-class Solution {
-    public Node copyRandomList(Node head) {
-        if (head == null) return null;
+// class Solution {
+//     public Node copyRandomList(Node head) {
+//         if (head == null) return null;
 
        
-        Node curr = head;
-        while (curr != null) {
-            Node copy = new Node(curr.val);
-            copy.next = curr.next;
-            curr.next = copy;
-            curr = copy.next;
-        }
+//         Node curr = head;
+//         while (curr != null) {
+//             Node copy = new Node(curr.val);
+//             copy.next = curr.next;
+//             curr.next = copy;
+//             curr = copy.next;
+//         }
 
         
-        curr = head;
-        while (curr != null) {
-            if (curr.random != null) {
-                curr.next.random = curr.random.next;
-            }
-            curr = curr.next.next;
-        }
+//         curr = head;
+//         while (curr != null) {
+//             if (curr.random != null) {
+//                 curr.next.random = curr.random.next;
+//             }
+//             curr = curr.next.next;
+//         }
 
        
-        curr = head;
-        Node dummy = new Node(0);
-        Node copyCurr = dummy;
+//         curr = head;
+//         Node dummy = new Node(0);
+//         Node copyCurr = dummy;
 
-        while (curr != null) {
-            copyCurr.next = curr.next;
-            curr.next = curr.next.next;
+//         while (curr != null) {
+//             copyCurr.next = curr.next;
+//             curr.next = curr.next.next;
 
-            copyCurr = copyCurr.next;
+//             copyCurr = copyCurr.next;
+//             curr = curr.next;
+//         }
+
+//         return dummy.next;
+//     }
+// }
+
+
+class Solution{
+    public Node copyRandomList(Node head){
+        if(head == null)
+        return null;
+        Map<Node , Node> map = new HashMap<>();
+        Node curr = head;
+        while(curr != null){
+            map.put(curr , new Node(curr.val));
             curr = curr.next;
         }
-
-        return dummy.next;
+        for(Node key : map.keySet()){
+            Node newNode = map.get(key);
+            newNode.next = map.get(key.next);
+            newNode.random = map.get(key.random);
+        }
+        return map.get(head);
     }
 }
