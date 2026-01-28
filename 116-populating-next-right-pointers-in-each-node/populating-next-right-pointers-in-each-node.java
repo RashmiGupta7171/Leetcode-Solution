@@ -22,28 +22,15 @@ class Node {
 */
 class Solution {
     public Node connect(Node root) {
-        if (root == null) return null;
-
-        Node leftmost = root;
-
-        while (leftmost.left != null) {
-            Node curr = leftmost;
-
-            while (curr != null) {
-                // connect left child to right child
-                curr.left.next = curr.right;
-
-                // connect right child to next subtree's left child
-                if (curr.next != null) {
-                    curr.right.next = curr.next.left;
-                }
-
-                curr = curr.next;
-            }
-
-            leftmost = leftmost.left;
+        if(root == null || root.left == null || root.right == null){
+        return root;
         }
-
+        root.left.next = root.right;
+        if(root.next != null){
+            root.right.next = root.next.left;
+        }
+        connect(root.right);
+        connect(root.left);
         return root;
     }
 }
