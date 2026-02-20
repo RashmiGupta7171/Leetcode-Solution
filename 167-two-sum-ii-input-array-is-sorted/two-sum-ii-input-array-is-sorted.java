@@ -7,7 +7,7 @@ class Solution {
             int sum = numbers[left] + numbers[right];
 
             if (sum == target) {
-                // return 1-indexed positions
+              
                 return new int[]{left + 1, right + 1};
             } 
             else if (sum < target) {
@@ -17,8 +17,6 @@ class Solution {
                 right--;
             }
         }
-
-        // problem guarantees exactly one solution
         return new int[]{-1, -1};
     }
 }
