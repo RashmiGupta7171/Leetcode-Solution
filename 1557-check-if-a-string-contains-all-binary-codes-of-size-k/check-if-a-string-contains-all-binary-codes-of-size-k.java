@@ -1,7 +1,6 @@
 
 class Solution {
     public boolean hasAllCodes(String s, int k) {
-        // Total possible binary codes of length k
         int needed = 1 << k;
         HashSet<String> set = new HashSet<>();
 
