@@ -27,17 +27,16 @@ class BSTIterator {
 
     private Stack<TreeNode> stack = new Stack<>();
 
-    // Constructor
+   
     public BSTIterator(TreeNode root) {
         pushLeft(root);
     }
 
-    // Returns true if there is a next smallest number
+ 
     public boolean hasNext() {
         return !stack.isEmpty();
     }
 
-    // Returns the next smallest number
     public int next() {
         TreeNode node = stack.pop();
         if (node.right != null) {
@@ -46,7 +45,6 @@ class BSTIterator {
         return node.val;
     }
 
-    // Helper function to push all left nodes into stack
     private void pushLeft(TreeNode node) {
         while (node != null) {
             stack.push(node);
@@ -55,16 +53,10 @@ class BSTIterator {
     }
 }
 
-// Example usage
+
 class Main {
     public static void main(String[] args) {
-        /*
-              7
-             / \
-            3   15
-               /  \
-              9    20
-        */
+   
 
         TreeNode root = new TreeNode(7);
         root.left = new TreeNode(3);
