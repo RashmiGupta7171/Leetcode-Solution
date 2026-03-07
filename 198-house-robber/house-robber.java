@@ -1,7 +1,7 @@
 class Solution {
     public int rob(int[] nums) {
-        int prev1 = 0; // max money till previous house
-        int prev2 = 0; // max money till house before previous
+        int prev1 = 0; 
+        int prev2 = 0; 
         
         for (int num : nums) {
             int temp = Math.max(prev1, prev2 + num);
