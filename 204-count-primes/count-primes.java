@@ -3,8 +3,6 @@ class Solution {
         if (n <= 2) return 0;
 
         boolean[] isPrime = new boolean[n];
-
-        // Assume all numbers are prime initially
         for (int i = 2; i < n; i++) {
             isPrime[i] = true;
         }
