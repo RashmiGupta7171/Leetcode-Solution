@@ -17,8 +17,7 @@
     public WordDictionary() {
         root = new TrieNode();
     }
-    
-    // Add word into Trie
+   
     public void addWord(String word) {
         TrieNode node = root;
         for (char ch : word.toCharArray()) {
@@ -31,7 +30,6 @@
         node.isEnd = true;
     }
     
-    // Search with support for '.'
     public boolean search(String word) {
         return dfs(word, 0, root);
     }
@@ -46,7 +44,7 @@
         char ch = word.charAt(index);
         
         if (ch == '.') {
-            // Try all possible paths
+          
             for (TrieNode child : node.children) {
                 if (child != null && dfs(word, index + 1, child)) {
                     return true;
@@ -54,7 +52,7 @@
             }
             return false;
         } else {
-            // Normal character
+         
             return dfs(word, index + 1, node.children[ch - 'a']);
         }
     }
