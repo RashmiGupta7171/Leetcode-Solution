@@ -2,9 +2,7 @@ class Solution {
     public List<String> findRepeatedDnaSequences(String s) {
         List<String> result = new ArrayList<>();
         if (s.length() < 10) return result;
-
-        // Map characters to 2-bit values
-        Map<Character, Integer> map = new HashMap<>();
+    Map<Character, Integer> map = new HashMap<>();
         map.put('A', 0);
         map.put('C', 1);
         map.put('G', 2);
@@ -15,15 +13,12 @@ class Solution {
 
         int hash = 0;
 
-        // Build first window
         for (int i = 0; i < 10; i++) {
             hash = (hash << 2) | map.get(s.charAt(i));
         }
         seen.add(hash);
 
-        int mask = (1 << 20) - 1; // Keep only last 20 bits
-
-        // Slide window
+        int mask = (1 << 20) - 1; 
         for (int i = 10; i < s.length(); i++) {
             hash = ((hash << 2) | map.get(s.charAt(i))) & mask;
 
