@@ -30,8 +30,6 @@ class Solution {
 
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-
-                // last node of each level
                 if (i == size - 1) {
                     result.add(node.val);
                 }
