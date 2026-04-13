@@ -17,7 +17,7 @@ class Solution {
             } else if (current > target) {
                 col--; // move left
             } else {
-                row++; // move down
+                row++; 
             }
         }
 
