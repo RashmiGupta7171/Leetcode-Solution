@@ -15,7 +15,7 @@ class Solution {
             if (current == target) {
                 return true;
             } else if (current > target) {
-                col--; // move left
+                col--; 
             } else {
                 row++; 
             }
