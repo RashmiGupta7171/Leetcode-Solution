@@ -22,18 +22,13 @@ class Solution {
         dfs(root, "", result);
         return result;
     }
-    
-    private void dfs(TreeNode node, String path, List<String> result) {
+      private void dfs(TreeNode node, String path, List<String> result) {
         if (node == null) return;
-        
-        if (node.left == null && node.right == null) {
+           if (node.left == null && node.right == null) {
             result.add(path + node.val);
             return;
         }
-        
-      
-        path = path + node.val + "->";
-        
+         path = path + node.val + "->";  
         dfs(node.left, path, result);
         dfs(node.right, path, result);
     }
