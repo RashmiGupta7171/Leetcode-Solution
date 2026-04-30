@@ -19,7 +19,6 @@ class PeekingIterator implements Iterator<Integer> {
     }
 
     // Returns the next element and moves pointer forward
-   // @Override
     public Integer next() {
         Integer result = nextElement;
         
@@ -33,7 +32,6 @@ class PeekingIterator implements Iterator<Integer> {
     }
 
     // Returns true if there are more elements
-    @Override
     public boolean hasNext() {
         return nextElement != null;
     }
