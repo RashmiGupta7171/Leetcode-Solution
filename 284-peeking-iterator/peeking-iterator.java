@@ -19,7 +19,7 @@ class PeekingIterator implements Iterator<Integer> {
     }
 
     // Returns the next element and moves pointer forward
-    @Override
+   // @Override
     public Integer next() {
         Integer result = nextElement;
         
