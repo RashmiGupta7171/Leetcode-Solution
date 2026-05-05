@@ -11,9 +11,9 @@ class Solution {
             if (s == g) {
                 bulls++;
             } else {
-                // If previously seen guess digit matches a secret digit
+           
                 if (count[s - '0'] < 0) cows++;
-                // If previously seen secret digit matches a guess digit
+         
                 if (count[g - '0'] > 0) cows++;
                 
                 count[s - '0']++;
