@@ -3,8 +3,7 @@ class Solution {
         int bulls = 0;
         int cows = 0;
         
-        int[] count = new int[10]; // for digits 0-9
-        
+        int[] count = new int[10]; 
         for (int i = 0; i < secret.length(); i++) {
             char s = secret.charAt(i);
             char g = guess.charAt(i);
