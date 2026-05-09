@@ -1,11 +1,8 @@
 class Solution {
     public boolean isAdditiveNumber(String num) {
         int n = num.length();
-
-        // Try every possible first and second number
         for (int i = 1; i <= n / 2; i++) {
 
-            // Leading zero check for first number
             if (num.charAt(0) == '0' && i > 1) {
                 break;
             }
