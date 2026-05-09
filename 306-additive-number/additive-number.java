@@ -9,7 +9,6 @@ class Solution {
 
             for (int j = 1; Math.max(i, j) <= n - i - j; j++) {
 
-                // Leading zero check for second number
                 if (num.charAt(i) == '0' && j > 1) {
                     break;
                 }
@@ -36,7 +35,6 @@ class Solution {
             java.math.BigInteger sum = n1.add(n2);
             String sumStr = sum.toString();
 
-            // Check if next part matches sum
             if (!num.startsWith(sumStr, start)) {
                 return false;
             }
