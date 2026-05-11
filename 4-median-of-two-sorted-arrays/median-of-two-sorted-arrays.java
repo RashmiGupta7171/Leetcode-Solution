@@ -1,6 +1,6 @@
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        // Ensure nums1 is the smaller array
+     
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);
         }
@@ -20,27 +20,23 @@ class Solution {
             int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];
             int minRightY = (partitionY == n) ? Integer.MAX_VALUE : nums2[partitionY];
 
-            // Correct partition found
+     
             if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
 
-                // Even total length
                 if ((m + n) % 2 == 0) {
                     return (Math.max(maxLeftX, maxLeftY) +
                             Math.min(minRightX, minRightY)) / 2.0;
                 } 
                 
-                // Odd total length
                 else {
                     return Math.max(maxLeftX, maxLeftY);
                 }
             }
 
-            // Move towards left in nums1
             else if (maxLeftX > minRightY) {
                 high = partitionX - 1;
             }
 
-            // Move towards right in nums1
             else {
                 low = partitionX + 1;
             }
