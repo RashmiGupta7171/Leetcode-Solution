@@ -1,0 +1,21 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+
+        int hold = -prices[0]; // Buying stock
+        int sold = 0;          // Just sold stock
+        int rest = 0;          // Cooldown / doing nothing
+
+        for (int i = 1; i < prices.length; i++) {
+            int prevSold = sold;
+
+            sold = hold + prices[i];
+            hold = Math.max(hold, rest - prices[i]);
+            rest = Math.max(rest, prevSold);
+        }
+
+        return Math.max(sold, rest);
+    }
+}
