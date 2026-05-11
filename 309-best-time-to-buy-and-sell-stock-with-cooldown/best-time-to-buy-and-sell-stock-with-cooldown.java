@@ -4,10 +4,9 @@ class Solution {
             return 0;
         }
 
-        int hold = -prices[0]; // Buying stock
-        int sold = 0;          // Just sold stock
-        int rest = 0;          // Cooldown / doing nothing
-
+        int hold = -prices[0]; 
+        int sold = 0;        
+        int rest = 0;          
         for (int i = 1; i < prices.length; i++) {
             int prevSold = sold;
 
