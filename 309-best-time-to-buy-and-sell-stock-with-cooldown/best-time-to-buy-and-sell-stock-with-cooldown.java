@@ -3,7 +3,6 @@ class Solution {
         if (prices == null || prices.length == 0) {
             return 0;
         }
-
         int hold = -prices[0]; 
         int sold = 0;        
         int rest = 0;          
@@ -14,7 +13,6 @@ class Solution {
             hold = Math.max(hold, rest - prices[i]);
             rest = Math.max(rest, prevSold);
         }
-
         return Math.max(sold, rest);
     }
 }
