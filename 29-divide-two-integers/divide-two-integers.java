@@ -1,5 +1,8 @@
 // class Solution {
 //     public int divide(int dividend, int divisor) {
+    
+    // code in PYTHON
+
 //         if(dividend == Int_MIN && divisior == -1)
 //         return INT_MAX;
 //         if(dividend == Int_MIN && divisior == 1)
@@ -22,7 +25,7 @@
 //     }
 // };
 
-
+// code in JAVA
 
 class Solution {
     public int divide(int dividend, int divisor) {
