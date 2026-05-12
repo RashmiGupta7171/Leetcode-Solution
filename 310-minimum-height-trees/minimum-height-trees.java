@@ -2,13 +2,11 @@ class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         List<Integer> result = new ArrayList<>();
 
-        // Special case
         if (n == 1) {
             result.add(0);
             return result;
         }
 
-        // Build graph
         List<Set<Integer>> graph = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
@@ -20,7 +18,6 @@ class Solution {
             graph.get(edge[1]).add(edge[0]);
         }
 
-        // Find initial leaves
         List<Integer> leaves = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
@@ -31,7 +28,6 @@ class Solution {
 
         int remainingNodes = n;
 
-        // Remove leaves layer by layer
         while (remainingNodes > 2) {
             remainingNodes -= leaves.size();
 
