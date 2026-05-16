@@ -7,13 +7,13 @@ class Solution {
             int mid = left + (right - left) / 2;
 
             if (nums[mid] > nums[right]) {
-                // Minimum is in the right half
+             
                 left = mid + 1;
             } else if (nums[mid] < nums[right]) {
-                // Minimum is in the left half including mid
+             
                 right = mid;
             } else {
-                // Duplicate case, reduce search space
+               
                 right--;
             }
         }
