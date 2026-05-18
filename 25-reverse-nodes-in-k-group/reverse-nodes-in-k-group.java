@@ -8,12 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-
-
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         
-        // Dummy node for easier handling
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         
@@ -21,20 +18,17 @@ class Solution {
         
         while (true) {
             
-            // Find kth node
             ListNode kth = prevGroup;
             for (int i = 0; i < k && kth != null; i++) {
                 kth = kth.next;
             }
             
-            // If less than k nodes remain
             if (kth == null) {
                 break;
             }
             
             ListNode groupNext = kth.next;
             
-            // Reverse group
             ListNode prev = groupNext;
             ListNode curr = prevGroup.next;
             
@@ -44,8 +38,6 @@ class Solution {
                 prev = curr;
                 curr = temp;
             }
-            
-            // Connect reversed group
             ListNode temp = prevGroup.next;
             prevGroup.next = kth;
             prevGroup = temp;
