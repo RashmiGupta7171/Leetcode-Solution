@@ -11,14 +11,12 @@ class Solution {
         int wordCount = words.length;
         int totalLen = wordLen * wordCount;
 
-        // Store frequency of words
         HashMap<String, Integer> wordMap = new HashMap<>();
 
         for (String word : words) {
             wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
         }
 
-        // Sliding window
         for (int i = 0; i < wordLen; i++) {
 
             int left = i;
@@ -30,13 +28,11 @@ class Solution {
 
                 String word = s.substring(right, right + wordLen);
 
-                // Valid word
                 if (wordMap.containsKey(word)) {
 
                     seen.put(word, seen.getOrDefault(word, 0) + 1);
                     count++;
 
-                    // If word appears more times than needed
                     while (seen.get(word) > wordMap.get(word)) {
 
                         String leftWord = s.substring(left, left + wordLen);
@@ -47,7 +43,6 @@ class Solution {
                         count--;
                     }
 
-                    // Found valid substring
                     if (count == wordCount) {
 
                         result.add(left);
@@ -61,7 +56,6 @@ class Solution {
                     }
 
                 } else {
-                    // Reset window
                     seen.clear();
                     count = 0;
                     left = right + wordLen;
