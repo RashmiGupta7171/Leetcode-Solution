@@ -6,8 +6,6 @@ class Solution {
         while (i < words.length) {
             int lineLength = words[i].length();
             int j = i + 1;
-
-            // Find how many words can fit in the current line
             while (j < words.length &&
                    lineLength + 1 + words[j].length() <= maxWidth) {
                 lineLength += 1 + words[j].length();
@@ -17,7 +15,6 @@ class Solution {
             int numWords = j - i;
             StringBuilder line = new StringBuilder();
 
-            // Last line or line with only one word
             if (j == words.length || numWords == 1) {
                 for (int k = i; k < j; k++) {
                     line.append(words[k]);
