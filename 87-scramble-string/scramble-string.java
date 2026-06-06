@@ -11,7 +11,6 @@ class Solution {
 
         int n = s1.length();
 
-        // Prune using character frequency
         int[] count = new int[26];
         for (int i = 0; i < n; i++) {
             count[s1.charAt(i) - 'a']++;
@@ -26,14 +25,12 @@ class Solution {
         }
 
         for (int i = 1; i < n; i++) {
-            // No swap case
             if (isScramble(s1.substring(0, i), s2.substring(0, i)) &&
                 isScramble(s1.substring(i), s2.substring(i))) {
                 memo.put(key, true);
                 return true;
             }
 
-            // Swap case
             if (isScramble(s1.substring(0, i), s2.substring(n - i)) &&
                 isScramble(s1.substring(i), s2.substring(0, n - i))) {
                 memo.put(key, true);
