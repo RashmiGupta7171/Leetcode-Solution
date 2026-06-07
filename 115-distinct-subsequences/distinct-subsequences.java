@@ -6,7 +6,7 @@ class Solution {
         long[][] dp = new long[m + 1][n + 1];
 
         for (int i = 0; i <= m; i++) {
-            dp[i][0] = 1; // Empty t can be formed in one way
+            dp[i][0] = 1; 
         }
 
         for (int i = 1; i <= m; i++) {
