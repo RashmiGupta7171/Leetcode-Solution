@@ -28,7 +28,6 @@ class Solution {
             slow = nextNode;
         }
 
-        // Calculate maximum twin sum
         int maxSum = 0;
         ListNode first = head;
         ListNode second = prev;
