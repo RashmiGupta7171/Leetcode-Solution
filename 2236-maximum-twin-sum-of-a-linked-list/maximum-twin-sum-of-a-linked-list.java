@@ -11,7 +11,7 @@
 
 class Solution {
     public int pairSum(ListNode head) {
-        // Find the middle of the linked list
+    
         ListNode slow = head;
         ListNode fast = head;
 
