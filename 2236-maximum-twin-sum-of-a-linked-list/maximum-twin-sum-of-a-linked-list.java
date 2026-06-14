@@ -20,7 +20,6 @@ class Solution {
             fast = fast.next.next;
         }
 
-        // Reverse the second half
         ListNode prev = null;
         while (slow != null) {
             ListNode nextNode = slow.next;
