@@ -23,14 +23,13 @@ class Solution {
                 dx /= g;
                 dy /= g;
                 
-                // Normalize sign
                 if (dx < 0) {
                     dx = -dx;
                     dy = -dy;
                 } else if (dx == 0) {
-                    dy = 1; // vertical line
+                    dy = 1; 
                 } else if (dy == 0) {
-                    dx = 1; // horizontal line
+                    dx = 1; 
                 }
                 
                 String slope = dy + "/" + dx;
