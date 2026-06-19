@@ -5,14 +5,12 @@ class Solution {
 
         int[][] dp = new int[m + 1][n + 1];
 
-        // Initialize with large values
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
                 dp[i][j] = Integer.MAX_VALUE;
             }
         }
 
-        // Base conditions
         dp[m][n - 1] = 1;
         dp[m - 1][n] = 1;
 
