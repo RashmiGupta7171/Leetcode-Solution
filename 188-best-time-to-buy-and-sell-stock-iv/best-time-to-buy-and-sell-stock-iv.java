@@ -3,7 +3,7 @@ class Solution {
         int n = prices.length;
         if (n == 0 || k == 0) return 0;
 
-        // If k is large, it becomes unlimited transactions
+       
         if (k >= n / 2) {
             int profit = 0;
             for (int i = 1; i < n; i++) {
