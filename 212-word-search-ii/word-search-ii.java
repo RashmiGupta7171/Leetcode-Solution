@@ -10,7 +10,6 @@ class Solution {
 
     public List<String> findWords(char[][] board, String[] words) {
 
-        // Build Trie
         for (String word : words) {
             TrieNode node = root;
             for (char ch : word.toCharArray()) {
@@ -50,10 +49,9 @@ class Solution {
             return;
         }
 
-        // Found a word
         if (next.word != null) {
             result.add(next.word);
-            next.word = null; // avoid duplicates
+            next.word = null; 
         }
 
         board[row][col] = '#';
