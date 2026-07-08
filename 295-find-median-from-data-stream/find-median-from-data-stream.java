@@ -1,9 +1,7 @@
 class MedianFinder {
 
-    // Max Heap (stores smaller half)
     private PriorityQueue<Integer> small;
 
-    // Min Heap (stores larger half)
     private PriorityQueue<Integer> large;
 
     public MedianFinder() {
@@ -12,14 +10,9 @@ class MedianFinder {
     }
 
     public void addNum(int num) {
-
-        // Add to max heap
         small.offer(num);
-
-        // Move the largest from small to large
         large.offer(small.poll());
 
-        // Balance the heaps
         if (large.size() > small.size()) {
             small.offer(large.poll());
         }
