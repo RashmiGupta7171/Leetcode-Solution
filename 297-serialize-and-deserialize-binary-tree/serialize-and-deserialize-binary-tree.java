@@ -1,4 +1,3 @@
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -11,7 +10,6 @@
 
 public class Codec {
 
-    // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         preorder(root, sb);
@@ -28,8 +26,6 @@ public class Codec {
         preorder(node.left, sb);
         preorder(node.right, sb);
     }
-
-    // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         String[] arr = data.split(",");
         Queue<String> queue = new LinkedList<>();
