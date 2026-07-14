@@ -2,8 +2,6 @@ class Solution {
     public String removeDuplicateLetters(String s) {
         int[] lastIndex = new int[26];
         boolean[] visited = new boolean[26];
-
-        // Store last occurrence of each character
         for (int i = 0; i < s.length(); i++) {
             lastIndex[s.charAt(i) - 'a'] = i;
         }
