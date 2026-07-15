@@ -4,7 +4,6 @@ class Solution {
         int[] mask = new int[n];
         int[] len = new int[n];
 
-        // Create bitmask for each word
         for (int i = 0; i < n; i++) {
             int bitmask = 0;
             for (char c : words[i].toCharArray()) {
@@ -16,7 +15,6 @@ class Solution {
 
         int maxProduct = 0;
 
-        // Compare every pair of words
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if ((mask[i] & mask[j]) == 0) {
