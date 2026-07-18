@@ -2,7 +2,6 @@ class Solution {
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
 
-        // Initialize with a value greater than the maximum possible answer
         for (int i = 1; i <= amount; i++) {
             dp[i] = amount + 1;
         }
