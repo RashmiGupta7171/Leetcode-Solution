@@ -4,8 +4,8 @@ class Solution {
         int[] sorted = nums.clone();
         Arrays.sort(sorted);
 
-        int left = (n + 1) / 2 - 1; // End of first half
-        int right = n - 1;          // End of second half
+        int left = (n + 1) / 2 - 1; 
+        int right = n - 1;          
 
         for (int i = 0; i < n; i++) {
             if ((i & 1) == 0) {
