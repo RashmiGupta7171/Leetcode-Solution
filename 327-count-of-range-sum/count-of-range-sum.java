@@ -32,7 +32,6 @@ class Solution {
             count += j - k;
         }
 
-        // Merge the two sorted halves
         long[] temp = new long[right - left + 1];
         int p1 = left;
         int p2 = mid + 1;
