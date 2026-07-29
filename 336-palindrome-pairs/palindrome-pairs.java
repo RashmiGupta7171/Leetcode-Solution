@@ -1,11 +1,8 @@
-
-
 class Solution {
     public List<List<Integer>> palindromePairs(String[] words) {
         List<List<Integer>> result = new ArrayList<>();
         Map<String, Integer> map = new HashMap<>();
 
-        // Store reversed lookup
         for (int i = 0; i < words.length; i++) {
             map.put(words[i], i);
         }
@@ -18,7 +15,6 @@ class Solution {
                 String prefix = word.substring(0, j);
                 String suffix = word.substring(j);
 
-                // Case 1: Prefix is palindrome
                 if (isPalindrome(prefix)) {
                     String revSuffix = new StringBuilder(suffix).reverse().toString();
                     Integer idx = map.get(revSuffix);
@@ -27,8 +23,6 @@ class Solution {
                     }
                 }
 
-                // Case 2: Suffix is palindrome
-                // j != len avoids duplicates
                 if (j != len && isPalindrome(suffix)) {
                     String revPrefix = new StringBuilder(prefix).reverse().toString();
                     Integer idx = map.get(revPrefix);
