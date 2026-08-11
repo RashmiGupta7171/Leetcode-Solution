@@ -1,12 +1,9 @@
-
-
 /**
  * Your SummaryRanges object will be instantiated and called as such:
  * SummaryRanges obj = new SummaryRanges();
  * obj.addNum(value);
  * int[][] param_2 = obj.getIntervals();
  */
-
 
 class SummaryRanges {
 
@@ -46,12 +43,9 @@ class SummaryRanges {
             prev = num;
         }
 
-        // Add the last interval
         temp[index][0] = start;
         temp[index][1] = prev;
         index++;
-
-        // Return only the required intervals
         int[][] result = new int[index][2];
 
         for (int i = 0; i < index; i++) {
