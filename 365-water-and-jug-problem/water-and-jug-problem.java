@@ -1,11 +1,10 @@
 class Solution {
     public boolean canMeasureWater(int x, int y, int target) {
-        // Total capacity is less than target
+      
         if (x + y < target) {
             return false;
         }
 
-        // If target is 0, it is always possible
         if (target == 0) {
             return true;
         }
