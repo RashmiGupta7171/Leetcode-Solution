@@ -6,7 +6,6 @@ class Solution {
         int result = 1;
 
         for (int digit : b) {
-            // result = result^10 * a^digit
             result = (pow(result, 10) * pow(a, digit)) % MOD;
         }
 
