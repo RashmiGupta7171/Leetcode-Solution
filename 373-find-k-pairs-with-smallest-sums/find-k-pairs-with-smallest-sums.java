@@ -8,12 +8,11 @@ class Solution {
             return result;
         }
 
-        // Min heap: {sum, index in nums1, index in nums2}
+       
         PriorityQueue<int[]> pq = new PriorityQueue<>(
             (a, b) -> Integer.compare(a[0], b[0])
         );
 
-        // Add the first k possible pairs
         for (int i = 0; i < Math.min(k, nums1.length); i++) {
             pq.offer(new int[]{nums1[i] + nums2[0], i, 0});
         }
@@ -28,7 +27,6 @@ class Solution {
             result.add(Arrays.asList(nums1[i], nums2[j]));
             k--;
 
-            // Move to the next element in nums2
             if (j + 1 < nums2.length) {
                 pq.offer(new int[]{
                     nums1[i] + nums2[j + 1],
