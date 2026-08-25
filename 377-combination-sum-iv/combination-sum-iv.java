@@ -2,8 +2,6 @@ class Solution {
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[target + 1];
 
-        // There is 1 way to make sum 0:
-        // choose nothing.
         dp[0] = 1;
 
         for (int i = 1; i <= target; i++) {
