@@ -26,7 +26,6 @@ class Solution {
         int col = 0;
         int count = 0;
 
-        // Start from bottom-left
         while (row >= 0 && col < n) {
             if (matrix[row][col] <= target) {
                 // All elements above this element in this column
