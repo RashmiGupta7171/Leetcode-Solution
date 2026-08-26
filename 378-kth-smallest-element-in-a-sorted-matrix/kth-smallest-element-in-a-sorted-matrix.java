@@ -28,8 +28,6 @@ class Solution {
 
         while (row >= 0 && col < n) {
             if (matrix[row][col] <= target) {
-                // All elements above this element in this column
-                // are also <= target
                 count += row + 1;
                 col++;
             } else {
