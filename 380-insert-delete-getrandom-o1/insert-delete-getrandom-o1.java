@@ -11,7 +11,7 @@ class RandomizedSet {
     }
 
     public boolean insert(int val) {
-        // If already present
+        
         if (map.containsKey(val)) {
             return false;
         }
