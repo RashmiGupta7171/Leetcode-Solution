@@ -1,4 +1,3 @@
-
 class RandomizedCollection {
 
     private List<Integer> list;
