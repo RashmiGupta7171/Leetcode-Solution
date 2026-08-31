@@ -18,7 +18,6 @@ class Solution {
         for (int i = nums.length - 1; i > 0; i--) {
             int j = random.nextInt(i + 1);
 
-            // Swap nums[i] and nums[j]
             int temp = nums[i];
             nums[i] = nums[j];
             nums[j] = temp;
