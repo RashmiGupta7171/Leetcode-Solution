@@ -1,5 +1,3 @@
-import java.util.Random;
-
 class Solution {
 
     private int[] original;
