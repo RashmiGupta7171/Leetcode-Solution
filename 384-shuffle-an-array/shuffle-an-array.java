@@ -1,5 +1,4 @@
 class Solution {
-
     private int[] original;
     private int[] nums;
     private Random random;
