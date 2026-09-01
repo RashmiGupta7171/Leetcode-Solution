@@ -51,13 +51,11 @@
                 sign = -1;
             }
 
-            // Handle digits
             else if (Character.isDigit(ch)) {
                 num = num * 10 + (ch - '0');
                 hasNum = true;
             }
 
-            // When we find a comma
             else if (ch == ',') {
 
                 if (hasNum) {
