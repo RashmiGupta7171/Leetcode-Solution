@@ -68,13 +68,11 @@
                 }
             }
 
-            // When we find a nested list
             else if (ch == '[') {
 
                 int start = i;
                 int count = 1;
 
-                // Find the matching ']'
                 while (count != 0) {
                     i++;
 
@@ -85,7 +83,6 @@
                     }
                 }
 
-                // Recursively deserialize the nested list
                 result.add(deserialize(s.substring(start, i + 1)));
 
                 num = 0;
@@ -94,7 +91,6 @@
             }
         }
 
-        // Add the last integer if present
         if (hasNum) {
             result.add(new NestedInteger(sign * num));
         }
