@@ -7,11 +7,9 @@ class Solution {
         for (int i = 0; i < n; i++) {
             result.add(current);
 
-            // Try to go deeper: 1 -> 10 -> 100 ...
             if (current * 10 <= n) {
                 current *= 10;
             } 
-            // Otherwise, move to the next number
             else {
                 while (current % 10 == 9 || current + 1 > n) {
                     current /= 10;
