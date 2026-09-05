@@ -5,8 +5,7 @@ class Solution {
         boolean left = true;
 
         while (n > 1) {
-            // Head changes when eliminating from left
-            // or when eliminating from right with odd count
+          
             if (left || n % 2 == 1) {
                 head += step;
             }
