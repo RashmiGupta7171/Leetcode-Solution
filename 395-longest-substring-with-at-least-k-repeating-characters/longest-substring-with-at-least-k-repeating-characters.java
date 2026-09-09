@@ -14,26 +14,22 @@ class Solution {
 
         int[] freq = new int[26];
 
-        // Count frequency of each character
+        
         for (int i = left; i <= right; i++) {
             freq[s.charAt(i) - 'a']++;
         }
 
-        // Find a character whose frequency is less than k
         for (int i = left; i <= right; i++) {
             char c = s.charAt(i);
 
             if (freq[c - 'a'] < k) {
 
-                // Split around this invalid character
                 int leftPart = solve(s, left, i - 1, k);
                 int rightPart = solve(s, i + 1, right, k);
 
                 return Math.max(leftPart, rightPart);
             }
         }
-
-        // Every character appears at least k times
         return right - left + 1;
     }
 }
