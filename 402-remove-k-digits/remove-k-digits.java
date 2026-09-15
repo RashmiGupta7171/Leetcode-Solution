@@ -12,14 +12,10 @@ class Solution {
 
             stack.append(digit);
         }
-
-        // Remove remaining digits from the end
         while (k > 0) {
             stack.deleteCharAt(stack.length() - 1);
             k--;
         }
-
-        // Remove leading zeros
         int i = 0;
         while (i < stack.length() && stack.charAt(i) == '0') {
             i++;
