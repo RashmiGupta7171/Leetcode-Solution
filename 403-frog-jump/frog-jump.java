@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public boolean canCross(int[] stones) {
         int n = stones.length;
@@ -9,8 +7,6 @@ class Solution {
         for (int stone : stones) {
             map.put(stone, new HashSet<>());
         }
-
-        // First jump must be 1 unit
         map.get(0).add(0);
 
         for (int stone : stones) {
