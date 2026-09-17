@@ -20,8 +20,6 @@ class Solution {
         }
 
         int sum = 0;
-
-        // Check if left child is a leaf
         if (root.left != null &&
             root.left.left == null &&
             root.left.right == null) {
@@ -29,7 +27,6 @@ class Solution {
             sum += root.left.val;
         }
 
-        // Recursively check left and right subtrees
         sum += sumOfLeftLeaves(root.left);
         sum += sumOfLeftLeaves(root.right);
 
