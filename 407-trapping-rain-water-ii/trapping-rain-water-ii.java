@@ -5,19 +5,14 @@ class Solution {
         int m = heightMap.length;
         int n = heightMap[0].length;
 
-        // If there are not enough rows/columns to trap water
         if (m <= 2 || n <= 2) {
             return 0;
         }
-
-        // Min-heap: [height, row, column]
         PriorityQueue<int[]> pq = new PriorityQueue<>(
             (a, b) -> Integer.compare(a[0], b[0])
         );
 
         boolean[][] visited = new boolean[m][n];
-
-        // Add all boundary cells
         for (int i = 0; i < m; i++) {
             pq.offer(new int[]{heightMap[i][0], i, 0});
             pq.offer(new int[]{heightMap[i][n - 1], i, n - 1});
@@ -35,8 +30,6 @@ class Solution {
         }
 
         int water = 0;
-
-        // Four directions
         int[][] directions = {
             {1, 0},
             {-1, 0},
@@ -54,8 +47,6 @@ class Solution {
             for (int[] dir : directions) {
                 int newRow = row + dir[0];
                 int newCol = col + dir[1];
-
-                // Check boundaries and visited status
                 if (newRow < 0 || newRow >= m ||
                     newCol < 0 || newCol >= n ||
                     visited[newRow][newCol]) {
@@ -65,13 +56,10 @@ class Solution {
                 visited[newRow][newCol] = true;
 
                 int neighborHeight = heightMap[newRow][newCol];
-
-                // Water trapped at this cell
                 if (neighborHeight < height) {
                     water += height - neighborHeight;
                 }
 
-                // The effective boundary height
                 pq.offer(new int[]{
                     Math.max(height, neighborHeight),
                     newRow,
