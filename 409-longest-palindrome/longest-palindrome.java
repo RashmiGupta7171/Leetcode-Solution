@@ -5,7 +5,6 @@ class Solution {
         for (char c : s.toCharArray()) {
             count[c]++;
         }
-
         int length = 0;
         boolean hasOdd = false;
 
