@@ -5,7 +5,6 @@ class Solution {
         for (int num : nums) {
             long n = num;
 
-            // Skip duplicate values
             if (first != null && n == first ||
                 second != null && n == second ||
                 third != null && n == third) {
@@ -24,7 +23,6 @@ class Solution {
             }
         }
 
-        // If third maximum doesn't exist, return maximum
         return third == null ? first.intValue() : third.intValue();
     }
 }
