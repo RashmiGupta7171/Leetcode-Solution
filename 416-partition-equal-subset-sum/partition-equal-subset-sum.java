@@ -4,8 +4,6 @@ class Solution {
 
         for (int n : nums)
             sum += n;
-
-        // Total sum must be even
         if (sum % 2 != 0)
             return false;
 
