@@ -6,7 +6,6 @@ class Solution {
             for (int j = 0; j < board[0].length; j++) {
 
                 if (board[i][j] == 'X') {
-                    // Count only the first cell of each battleship
                     if (i > 0 && board[i - 1][j] == 'X')
                         continue;
 
