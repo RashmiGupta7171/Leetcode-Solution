@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     int m, n;
     int[][] heights;
@@ -13,15 +11,12 @@ class Solution {
         boolean[][] pacific = new boolean[m][n];
         boolean[][] atlantic = new boolean[m][n];
 
-        // Pacific: top and left
         for (int i = 0; i < m; i++) {
             dfs(i, 0, pacific);
         }
         for (int j = 0; j < n; j++) {
             dfs(0, j, pacific);
         }
-
-        // Atlantic: bottom and right
         for (int i = 0; i < m; i++) {
             dfs(i, n - 1, atlantic);
         }
