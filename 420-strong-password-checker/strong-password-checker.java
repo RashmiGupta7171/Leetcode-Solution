@@ -16,8 +16,6 @@ class Solution {
         if (!lower) missing++;
         if (!upper) missing++;
         if (!digit) missing++;
-
-        // Find number of replacements needed for repeating characters
         int replace = 0;
         int[] mod = new int[3]; // groups where length % 3 == 0, 1, 2
 
