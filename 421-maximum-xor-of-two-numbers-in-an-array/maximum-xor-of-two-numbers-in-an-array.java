@@ -4,7 +4,6 @@ class Solution {
     }
 
     TrieNode root = new TrieNode();
-
     void insert(int num) {
         TrieNode node = root;
 
