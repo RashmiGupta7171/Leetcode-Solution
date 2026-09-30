@@ -8,7 +8,6 @@ class Solution {
 
         int[] num = new int[10];
 
-        // Unique characters
         num[0] = count['z' - 'a']; // zero
         num[2] = count['w' - 'a']; // two
         num[4] = count['u' - 'a']; // four
