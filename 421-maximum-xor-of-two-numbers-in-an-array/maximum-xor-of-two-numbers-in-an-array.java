@@ -17,7 +17,6 @@ class Solution {
             node = node.child[bit];
         }
     }
-
     int findMaxXor(int num) {
         TrieNode node = root;
         int xor = 0;
