@@ -6,7 +6,6 @@ class Solution {
             int byteVal = num & 0xFF;
 
             if (remaining == 0) {
-                // Determine how many bytes this character uses
                 if ((byteVal & 0b10000000) == 0) {
                     remaining = 0;          // 1-byte character
                 } else if ((byteVal & 0b11100000) == 0b11000000) {
