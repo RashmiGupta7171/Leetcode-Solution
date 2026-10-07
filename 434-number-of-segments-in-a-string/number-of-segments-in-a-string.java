@@ -3,8 +3,7 @@ class Solution {
         int count = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            // Start of a new segment
-            if (s.charAt(i) != ' ' &&
+             if (s.charAt(i) != ' ' &&
                 (i == 0 || s.charAt(i - 1) == ' ')) {
                 count++;
             }
