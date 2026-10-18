@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int numberOfArithmeticSlices(int[] nums) {
         int n = nums.length;
