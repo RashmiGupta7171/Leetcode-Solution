@@ -9,7 +9,6 @@
  */
 public class Codec {
 
-    // Serialize the tree into a string
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         preorder(root, sb);
@@ -26,7 +25,6 @@ public class Codec {
         preorder(root.right, sb);
     }
 
-    // Deserialize the string back into a tree
     public TreeNode deserialize(String data) {
         if (data == null || data.isEmpty()) {
             return null;
