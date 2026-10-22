@@ -24,17 +24,14 @@ class Solution {
         } else if (key > root.val) {
             root.right = deleteNode(root.right, key);
         } else {
-            // Node has no left child
+ 
             if (root.left == null) {
                 return root.right;
             }
 
-            // Node has no right child
             if (root.right == null) {
                 return root.left;
             }
-
-            // Node has two children
             TreeNode successor = root.right;
             while (successor.left != null) {
                 successor = successor.left;
