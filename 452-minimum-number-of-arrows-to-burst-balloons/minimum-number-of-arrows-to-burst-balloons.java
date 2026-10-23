@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int findMinArrowShots(int[][] points) {
         if (points.length == 0) {
