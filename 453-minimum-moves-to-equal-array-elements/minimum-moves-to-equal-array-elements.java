@@ -1,4 +1,3 @@
-
 class Solution {
     public int minMoves(int[] nums) {
         int min = nums[0];
