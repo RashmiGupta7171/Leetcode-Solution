@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 class Solution {
     public boolean find132pattern(int[] nums) {
         Stack<Integer> stack = new Stack<>();
