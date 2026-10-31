@@ -5,11 +5,8 @@ class Solution {
 
         int MOD = 1000000007;
 
-        // dp[i][j][0] = ways to enter from left
-        // dp[i][j][1] = ways to enter from top
         int[][][] dp = new int[m][n][2];
 
-        // Starting position
         dp[0][0][0] = 1;
 
         for (int i = 0; i < m; i++) {
@@ -24,13 +21,11 @@ class Solution {
 
                     if (grid[i][j] == 0) {
 
-                        // Move right
                         if (j + 1 < n) {
                             dp[i][j + 1][0] =
                                 (dp[i][j + 1][0] + ways) % MOD;
                         }
 
-                        // Move down
                         if (i + 1 < m) {
                             dp[i + 1][j][1] =
                                 (dp[i + 1][j][1] + ways) % MOD;
@@ -38,13 +33,11 @@ class Solution {
 
                     } else {
 
-                        // Mirror: entered while moving right
                         if (d == 0 && i + 1 < m) {
                             dp[i + 1][j][1] =
                                 (dp[i + 1][j][1] + ways) % MOD;
                         }
 
-                        // Mirror: entered while moving down
                         else if (d == 1 && j + 1 < n) {
                             dp[i][j + 1][0] =
                                 (dp[i][j + 1][0] + ways) % MOD;
