@@ -33,7 +33,6 @@ class LFUCache {
 
         Node node = cache.get(key);
 
-        // Increase frequency
         updateFrequency(node);
 
         return node.value;
@@ -45,7 +44,6 @@ class LFUCache {
             return;
         }
 
-        // Update existing key
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             node.value = value;
@@ -54,12 +52,10 @@ class LFUCache {
             return;
         }
 
-        // Remove LFU key when cache is full
         if (cache.size() == capacity) {
 
             LinkedHashSet<Integer> keys = freqMap.get(minFreq);
 
-            // Remove least recently used key among minimum frequency
             int evictKey = keys.iterator().next();
 
             keys.remove(evictKey);
@@ -70,7 +66,6 @@ class LFUCache {
             }
         }
 
-        // Insert new key with frequency 1
         Node newNode = new Node(key, value);
 
         cache.put(key, newNode);
@@ -88,12 +83,10 @@ class LFUCache {
         LinkedHashSet<Integer> keys = freqMap.get(oldFreq);
         keys.remove(node.key);
 
-        // If this was the minimum frequency and no keys remain
         if (oldFreq == minFreq && keys.isEmpty()) {
             minFreq++;
         }
 
-        // Increase frequency
         node.freq++;
 
         freqMap.computeIfAbsent(node.freq, k -> new LinkedHashSet<>())
