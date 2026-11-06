@@ -1,4 +1,3 @@
-
 class Solution {
     public int islandPerimeter(int[][] grid) {
         int perimeter = 0;
@@ -10,13 +9,9 @@ class Solution {
 
                 if (grid[i][j] == 1) {
                     perimeter += 4;
-
-                    // Check top neighbor
                     if (i > 0 && grid[i - 1][j] == 1) {
                         perimeter -= 2;
                     }
-
-                    // Check left neighbor
                     if (j > 0 && grid[i][j - 1] == 1) {
                         perimeter -= 2;
                     }
