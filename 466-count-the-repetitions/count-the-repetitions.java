@@ -11,8 +11,8 @@ class Solution {
         int[] count = new int[n1 + 1];
         int[] index = new int[n1 + 1];
 
-        int j = 0; // Index in s2
-        int cnt = 0; // Number of complete s2 repetitions
+        int j = 0; 
+        int cnt = 0; 
 
         for (int i = 1; i <= n1; i++) {
 
@@ -31,7 +31,6 @@ class Solution {
             count[i] = cnt;
             index[i] = j;
 
-            // Check whether a cycle has been found
             for (int k = 0; k < i; k++) {
 
                 if (index[k] == j) {
