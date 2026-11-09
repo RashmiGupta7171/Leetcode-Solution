@@ -1,4 +1,3 @@
-
 class Solution {
     public int findSubstringInWraproundString(String s) {
         int[] dp = new int[26];
