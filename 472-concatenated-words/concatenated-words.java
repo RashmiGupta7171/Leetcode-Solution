@@ -15,7 +15,6 @@ class Solution {
                 result.add(word);
             }
 
-            // Add current word to the set
             set.add(word);
         }
 
