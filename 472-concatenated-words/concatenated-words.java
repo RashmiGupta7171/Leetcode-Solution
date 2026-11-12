@@ -1,13 +1,9 @@
-
-import java.util.*;
-
 class Solution {
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
 
         List<String> result = new ArrayList<>();
         Set<String> set = new HashSet<>();
 
-        // Sort words according to their length
         Arrays.sort(words, (a, b) -> a.length() - b.length());
 
         for (String word : words) {
@@ -15,8 +11,6 @@ class Solution {
             if (word.length() == 0) {
                 continue;
             }
-
-            // Check if word can be formed using smaller words
             if (canForm(word, set)) {
                 result.add(word);
             }
