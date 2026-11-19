@@ -12,14 +12,10 @@ class Solution {
 
             long palindrome = i;
             long x = i;
-
-            // Generate palindrome by reversing digits
             while (x > 0) {
                 palindrome = palindrome * 10 + x % 10;
                 x /= 10;
             }
-
-            // Check whether palindrome can be divided
             for (long j = upper; j * j >= palindrome; j--) {
 
                 if (palindrome % j == 0) {
