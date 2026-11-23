@@ -13,7 +13,6 @@ class Solution {
         int count = mergeSort(nums, left, mid);
         count += mergeSort(nums, mid + 1, right);
 
-        // Count reverse pairs
         int j = mid + 1;
 
         for (int i = left; i <= mid; i++) {
@@ -24,7 +23,6 @@ class Solution {
             count += j - (mid + 1);
         }
 
-        // Merge both sorted halves
         merge(nums, left, mid, right);
 
         return count;
