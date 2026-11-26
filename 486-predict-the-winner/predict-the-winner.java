@@ -1,4 +1,3 @@
-
 class Solution {
     public boolean predictTheWinner(int[] nums) {
         int n = nums.length;
